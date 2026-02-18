@@ -1,0 +1,632 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Application Writer | Free Formal Leave & Job Application Generator</title>
+  <meta name="description" content="Generate formal applications for school, college & office instantly. Leave application generator, job application letter writer, school application format. AI writing tool for students & professionals.">
+  <meta name="keywords" content="application writer, leave application generator, job application letter writer, school application format, formal application letter generator, ai application writing tool">
+  <!-- Open graph / social media (optional but good for SEO) -->
+  <meta property="og:title" content="AI Application Writer – Formal Applications for School, College & Office">
+  <meta property="og:description" content="Free AI tool to generate leave, job, scholarship, and formal applications instantly.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://as9329387575.github.io/ai-application-writer">
+  <style>
+    /* MODERN RESET & BASE */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f6f9fe;
+      color: #1e2f4e;
+      line-height: 1.5;
+    }
+
+    /* main container uses grid for sidebar on desktop */
+    .app-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    /* desktop sidebar layout */
+    @media (min-width: 1024px) {
+      .app-grid {
+        grid-template-columns: 1fr 300px;
+        align-items: start;
+      }
+      .main-content {
+        grid-column: 1;
+      }
+      .desktop-sidebar {
+        grid-column: 2;
+        position: sticky;
+        top: 1rem;
+      }
+    }
+
+    /* cards and containers */
+    .card {
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 10px 25px -5px rgba(0, 35, 80, 0.1), 0 8px 10px -6px rgba(0,0,0,0.02);
+      padding: 1.8rem 1.5rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(58, 110, 185, 0.08);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:last-child {
+      margin-bottom: 0;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #0b2b4f;
+      margin-bottom: 0.25rem;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: #164863;
+      border-left: 6px solid #2d7fc1;
+      padding-left: 1rem;
+      margin: 1.5rem 0 1rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      color: #1e3b5c;
+      margin-bottom: 1rem;
+    }
+
+    /* form elements */
+    .form-row {
+      margin-bottom: 1.3rem;
+    }
+
+    label {
+      font-weight: 550;
+      color: #1f3a60;
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 0.95rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 2px solid #e2eaf2;
+      border-radius: 18px;
+      font-size: 1rem;
+      background: white;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      font-family: inherit;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #2d7fc1;
+      box-shadow: 0 0 0 4px rgba(45, 127, 193, 0.15);
+    }
+
+    .btn {
+      background: #2266a8;
+      color: white;
+      border: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 1rem 2rem;
+      border-radius: 40px;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(30, 80, 140, 0.3);
+      transition: background 0.15s, transform 0.1s;
+      width: auto;
+      min-width: 240px;
+    }
+
+    .btn:hover {
+      background: #1a4f83;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-outline {
+      background: white;
+      color: #2266a8;
+      border: 2px solid #2266a8;
+      box-shadow: none;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.95rem;
+      border-radius: 40px;
+      font-weight: 550;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1rem;
+      align-items: center;
+    }
+
+    /* ad placeholders */
+    .ad-space {
+      background: #eaf0f8;
+      border: 2px dashed #a0c2da;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #2b577c;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 1.2rem 0;
+    }
+
+    .ad-banner {
+      width: 100%;
+      min-height: 90px;
+      font-size: 1.2rem;
+    }
+
+    .ad-rectangle {
+      width: 100%;
+      min-height: 250px;
+      font-size: 1.2rem;
+    }
+
+    .ad-sidebar {
+      min-height: 250px;
+      background: #eaf0f8;
+    }
+
+    /* output cards */
+    .output-card {
+      background: #fafdff;
+      border-radius: 24px;
+      padding: 1.8rem;
+      border: 1px solid #cdddec;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+      margin-top: 1.8rem;
+      opacity: 0;
+      animation: fadeIn 0.4s ease forwards;
+      font-family: 'Times New Roman', Georgia, serif; /* classic letter feel */
+      white-space: pre-line;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(6px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .letter-item {
+      background: white;
+      border-radius: 20px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-left: 6px solid #2d7fc1;
+      box-shadow: 0 4px 8px rgba(0, 30, 60, 0.05);
+    }
+
+    .letter-item strong {
+      color: #1a3b5c;
+    }
+
+    .copy-all-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: flex-end;
+      margin-bottom: 1rem;
+    }
+
+    /* footer, contact etc */
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+      border-top: 1px solid #cbdae9;
+      padding-top: 2rem;
+    }
+
+    .footer-links a {
+      color: #1f4970;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .small-note {
+      font-size: 0.85rem;
+      color: #2f557c;
+      margin-top: 0.5rem;
+    }
+
+    /* contact form */
+    .contact-form input, .contact-form textarea {
+      border-radius: 30px;
+      background: #ffffff;
+    }
+
+    /* responsive tweaks */
+    @media (max-width: 640px) {
+      h1 { font-size: 1.9rem; }
+      .card { padding: 1.3rem; }
+      .btn { width: 100%; }
+    }
+
+    /* text utility */
+    .text-center { text-align: center; }
+    .mt-2 { margin-top: 0.8rem; }
+    .mb-1 { margin-bottom: 0.5rem; }
+    .separator { height: 1px; background: #d9e3ef; margin: 2rem 0; }
+  </style>
+</head>
+<body>
+  <div class="app-grid">
+    <!-- MAIN CONTENT (left column) -->
+    <div class="main-content">
+      <!-- top banner ad -->
+      <div class="ad-space ad-banner">
+        📢 Ad Space – 728x90
+      </div>
+
+      <section class="card">
+        <h1>AI Application Writer – Generate Formal Applications for School, College & Office</h1>
+        <p style="font-size: 1.2rem; color: #2b4a6b;">Smart, fast, and professional – client‑side generator.</p>
+      </section>
+
+      <!-- tool card -->
+      <section class="card">
+        <h2>📋 Fill in the details</h2>
+        <div class="form-row">
+          <label>Your Full Name</label>
+          <input type="text" id="fullName" placeholder="e.g. Rahul Sharma" value="Rahul Sharma">
+        </div>
+        <div class="form-row">
+          <label>Application Type</label>
+          <select id="appType">
+            <option value="leave">Leave Application</option>
+            <option value="sick">Sick Leave Application</option>
+            <option value="job">Job Application</option>
+            <option value="scholarship">Scholarship Application</option>
+            <option value="collegeAdmission">College Admission Application</option>
+            <option value="tc">Transfer Certificate Application</option>
+            <option value="bonafide">Bonafide Certificate Application</option>
+            <option value="feeConcession">Fee Concession Application</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Recipient (Principal / HR / Manager etc.)</label>
+          <input type="text" id="recipient" value="The Principal" placeholder="e.g. The Principal, HR Manager">
+        </div>
+        <div class="form-row">
+          <label>Reason / Details</label>
+          <textarea id="reason" rows="3" placeholder="Briefly describe the reason...">family function out of station</textarea>
+        </div>
+        <div class="form-row">
+          <label>Duration / Date (optional)</label>
+          <input type="text" id="duration" placeholder="e.g. 3 days, 15 May 2025" value="2 days">
+        </div>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <div style="flex:1;">
+            <label>Tone</label>
+            <select id="tone">
+              <option value="Formal">Formal</option>
+              <option value="Polite">Polite</option>
+              <option value="Professional">Professional</option>
+              <option value="Request-focused">Request-focused</option>
+            </select>
+          </div>
+          <div style="flex:1;">
+            <label>Length</label>
+            <select id="length">
+              <option value="Short">Short</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="Detailed">Detailed</option>
+            </select>
+          </div>
+        </div>
+        <div class="btn-group" style="margin-top: 2rem;">
+          <button class="btn" id="generateBtn">✨ Generate Application</button>
+        </div>
+      </section>
+
+      <!-- mid‑content ad (after generator) -->
+      <div class="ad-space ad-banner">
+        📢 Ad Space – 728x90 (mid‑content)
+      </div>
+
+      <!-- OUTPUT SECTION -->
+      <section class="card" id="outputSection" style="display: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+          <h2>📄 Generated Applications</h2>
+          <div class="copy-all-bar">
+            <button class="btn-outline" id="copyFirstBtn">📋 Copy first</button>
+            <button class="btn-outline" id="copyAllBtn">📑 Copy all</button>
+            <button class="btn-outline" id="downloadTxtBtn">⬇️ Download .txt</button>
+          </div>
+        </div>
+        <div id="lettersContainer"></div>
+      </section>
+
+      <!-- SEO BLOG CONTENT (1300+ words approx) -->
+      <section class="card">
+        <h2>✍️ What is formal application writing?</h2>
+        <p>A formal application is a structured document used to request something — leave, job, admission — in schools, colleges, or offices. It follows standard letter format: sender, date, recipient, subject, salutation, body, closing, and signature. The language is respectful and to the point. Our AI writer respects these conventions automatically.</p>
+
+        <h3>Application letter format (standard)</h3>
+        <p>1. Sender's name and details<br>2. Date<br>3. Recipient (Principal/HR)<br>4. Subject line<br>5. Salutation (Respected Sir/Madam)<br>6. Body – reason, duration, request<br>7. Thanking you<br>8. Yours faithfully / sincerely<br>9. Signature and full name</p>
+
+        <h3>Common mistakes in application writing</h3>
+        <p>❌ Too casual language · Missing subject · Unclear reason · Forgetting signature · Overly long paragraphs. Our tool avoids these pitfalls by using built‑in formal structures.</p>
+
+        <h3>How to write a leave application</h3>
+        <p>Always mention dates, reason, and address to the correct authority. Keep it polite. Example: "I request leave for 2 days from 10 May to 12 May due to a family function." Our tool customises this based on your inputs.</p>
+
+        <h3>How to write a job application</h3>
+        <p>Address HR/Manager, mention the position, express interest, summarise qualifications, and attach resume. Our generator produces a cover‑letter style application tailored to your reason.</p>
+
+        <h3>How this tool works</h3>
+        <p>You fill the form, click generate, and JavaScript builds 2‑3 unique formal letters using your inputs. Everything stays in your browser — no data leaves your device.</p>
+
+        <h3>Who should use this tool</h3>
+        <p>✅ Students (school/college) · Employees · Job seekers · Anyone writing a formal request. It’s 100% free and built for Students & Professionals.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="card">
+        <h2>❓ Frequently Asked Questions</h2>
+        <div style="display: grid; gap: 1rem;">
+          <div><strong>1. What is an AI Application Writer?</strong> It’s a client‑side tool that instantly drafts formal applications based on your inputs.</div>
+          <div><strong>2. Is this tool free?</strong> Yes, completely free, with AdSense support.</div>
+          <div><strong>3. Can I use this for school and office?</strong> Absolutely — covers both.</div>
+          <div><strong>4. Is the format correct?</strong> We follow standard formal letter templates.</div>
+          <div><strong>5. Does this tool store my data?</strong> No, all processing is local. No storage.</div>
+          <div><strong>6. Can I edit the generated application?</strong> Yes, copy and edit anywhere.</div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION with FormSubmit -->
+      <section class="card contact-form">
+        <h2>📬 Contact us</h2>
+        <form action="https://formsubmit.co/as9329387575@gmail.com" method="POST">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="form-row">
+            <label>Name</label>
+            <input type="text" name="name" required placeholder="Your name">
+          </div>
+          <div class="form-row">
+            <label>Email</label>
+            <input type="email" name="email" required placeholder="your@email.com">
+          </div>
+          <div class="form-row">
+            <label>Message</label>
+            <textarea name="message" rows="3" required placeholder="How can we help?"></textarea>
+          </div>
+          <button class="btn" type="submit" style="background: #2266a8;">Send message</button>
+        </form>
+      </section>
+
+      <!-- PRIVACY & TERMS (stacked) -->
+      <section class="card">
+        <h2>🔒 Privacy policy</h2>
+        <p><strong>No data storage:</strong> All processing happens client‑side. We never store your personal information. <strong>Cookies:</strong> We may use third-party ads (Google AdSense) that use cookies for personalised ads. No personal data is sold. Contact: as9329387575@gmail.com</p>
+        <div class="separator"></div>
+        <h2>📜 Terms & conditions</h2>
+        <p>Use this tool for lawful purposes only. Content is generated “as is” without warranties. We are not liable for any decisions based on these drafts. Intellectual property rights belong to the site owner. Governing law: India (placeholder).</p>
+      </section>
+
+      <!-- footer inside main content (will also appear on mobile) -->
+      <footer class="card" style="text-align: center;">
+        <div class="footer-links">
+          <a href="#">Home</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Contact</a>
+        </div>
+        <p style="margin-top: 1.5rem;">© 2025 AI Application Writer – Built for Students & Professionals</p>
+      </footer>
+    </div>
+
+    <!-- DESKTOP SIDEBAR (right column) visible only on >=1024px -->
+    <div class="desktop-sidebar">
+      <div class="ad-space ad-rectangle ad-sidebar">
+        📢 Ad Space – 300x250 (sidebar)
+      </div>
+      <div style="margin-top: 1.5rem; background: white; border-radius: 24px; padding: 1.5rem; box-shadow: 0 10px 20px rgba(0,0,0,0.02);">
+        <h3 style="margin-top: 0;">Quick tips</h3>
+        <ul style="padding-left: 1.2rem;">
+          <li>Always use respectful tone</li>
+          <li>Specify exact dates</li>
+          <li>Keep reason concise</li>
+          <li>Proofread before sending</li>
+        </ul>
+      </div>
+      <!-- second sidebar ad (sticky) -->
+      <div class="ad-space ad-rectangle ad-sidebar" style="margin-top: 1.5rem;">
+        📢 Ad Space – 300x250
+      </div>
+    </div>
+  </div>
+
+  <!-- footer ad outside grid (full width) but inside body -->
+  <div style="max-width: 1400px; margin: 1rem auto 0; padding: 0 1rem 2rem;">
+    <div class="ad-space ad-banner" style="margin-bottom: 0;">
+      📢 Footer Ad – 728x90
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      const generateBtn = document.getElementById('generateBtn');
+      const outputSection = document.getElementById('outputSection');
+      const lettersContainer = document.getElementById('lettersContainer');
+      const copyFirstBtn = document.getElementById('copyFirstBtn');
+      const copyAllBtn = document.getElementById('copyAllBtn');
+      const downloadTxtBtn = document.getElementById('downloadTxtBtn');
+
+      // input fields
+      const fullName = document.getElementById('fullName');
+      const appType = document.getElementById('appType');
+      const recipient = document.getElementById('recipient');
+      const reason = document.getElementById('reason');
+      const duration = document.getElementById('duration');
+      const tone = document.getElementById('tone');
+      const lengthOpt = document.getElementById('length');
+
+      // helper to format date
+      function todayDate() {
+        const d = new Date();
+        return d.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+      }
+
+      // core letter generator (returns array of 2-3 strings)
+      function generateLetters() {
+        const name = fullName.value.trim() || 'Your Name';
+        const type = appType.value;
+        const recip = recipient.value.trim() || 'The Principal';
+        const why = reason.value.trim() || 'mentioned reason';
+        const dur = duration.value.trim() ? duration.value.trim() : 'mentioned duration';
+        const toneVal = tone.value;
+        const lengthVal = lengthOpt.value;
+
+        // base subject line based on type
+        const typeMap = {
+          leave: 'Leave Application',
+          sick: 'Sick Leave Application',
+          job: 'Job Application for [Position]',
+          scholarship: 'Scholarship Application',
+          collegeAdmission: 'Application for Admission',
+          tc: 'Application for Transfer Certificate',
+          bonafide: 'Application for Bonafide Certificate',
+          feeConcession: 'Application for Fee Concession'
+        };
+        let baseSubject = typeMap[type] || 'Formal Application';
+
+        // expand reason based on length
+        let bodyDetail = '';
+        if (lengthVal === 'Short') bodyDetail = '';
+        else if (lengthVal === 'Medium') bodyDetail = ' I would be grateful if you could kindly consider my request. ';
+        else bodyDetail = ' I hope you will understand my situation and grant this request. I assure you that I will make up for any missed work promptly. ';
+
+        // extra sentences for tone
+        let tonePrefix = '';
+        if (toneVal === 'Polite') tonePrefix = 'I humbly request you to ';
+        else if (toneVal === 'Professional') tonePrefix = 'I would like to formally request ';
+        else if (toneVal === 'Request-focused') tonePrefix = 'I kindly request that you ';
+        else tonePrefix = 'I request you to ';
+
+        // generate 3 variations
+        const letters = [];
+
+        for (let i = 0; i < 3; i++) {
+          let subjectLine = baseSubject;
+          if (type === 'job') subjectLine = 'Application for the position of ' + (why.split(' ').slice(0,3).join(' ') || 'Software Engineer');
+
+          let bodyText = '';
+          if (type === 'leave' || type === 'sick') {
+            bodyText = `I am writing to request ${dur} of leave from [start date] due to ${why}. ${tonePrefix} grant me leave.${bodyDetail} I shall be thankful.`;
+          } else if (type === 'job') {
+            bodyText = `I am interested in applying for the ${subjectLine} role. With my background in ${why}, I believe I am a suitable candidate. ${tonePrefix} consider my application. I have attached my resume for your review.`;
+          } else if (type === 'scholarship') {
+            bodyText = `I wish to apply for the scholarship for the upcoming academic year. My reason: ${why}. ${tonePrefix} provide me financial assistance.${bodyDetail} I assure you I will utilise it well.`;
+          } else {
+            bodyText = `I am writing to request ${baseSubject.toLowerCase()} because ${why}. ${tonePrefix} approve this request. Duration: ${dur}.${bodyDetail}`;
+          }
+
+          // Add variation per loop (small tweaks)
+          if (i === 1) bodyText += ' I look forward to a positive response.';
+          if (i === 2) bodyText += ' Thank you for your consideration.';
+
+          const letter = `From: ${name}
+Date: ${todayDate()}
+To: ${recip}
+
+Subject: ${subjectLine}
+
+Respected Sir/Madam,
+
+${bodyText}
+
+Thanking you,
+
+Yours faithfully,
+${name}`;
+          letters.push(letter);
+        }
+        return letters;
+      }
+
+      function renderOutput() {
+        const letters = generateLetters();
+        lettersContainer.innerHTML = '';
+        letters.forEach((letter, idx) => {
+          const div = document.createElement('div');
+          div.className = 'letter-item';
+          div.setAttribute('data-index', idx);
+          div.style.whiteSpace = 'pre-wrap';
+          div.textContent = letter;
+          lettersContainer.appendChild(div);
+        });
+        outputSection.style.display = 'block';
+        window.scrollTo({ top: outputSection.offsetTop - 20, behavior: 'smooth' });
+      }
+
+      generateBtn.addEventListener('click', renderOutput);
+
+      // copy first letter
+      copyFirstBtn.addEventListener('click', () => {
+        const firstLetter = lettersContainer.querySelector('.letter-item');
+        if (!firstLetter) return alert('Generate applications first.');
+        navigator.clipboard.writeText(firstLetter.textContent).then(() => alert('First application copied!'));
+      });
+
+      // copy all
+      copyAllBtn.addEventListener('click', () => {
+        const items = lettersContainer.querySelectorAll('.letter-item');
+        if (!items.length) return alert('Generate applications first.');
+        const allText = Array.from(items).map(el => el.textContent).join('\n\n---\n\n');
+        navigator.clipboard.writeText(allText).then(() => alert('All applications copied!'));
+      });
+
+      // download .txt
+      downloadTxtBtn.addEventListener('click', () => {
+        const items = lettersContainer.querySelectorAll('.letter-item');
+        if (!items.length) return alert('Generate applications first.');
+        const allText = Array.from(items).map(el => el.textContent).join('\n\n---\n\n');
+        const blob = new Blob([allText], { type: 'text/plain' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `applications_${new Date().toISOString().slice(0,10)}.txt`;
+        a.click();
+        URL.revokeObjectURL(a.href);
+      });
+    })();
+  </script>
+</body>
+</html>
+```
